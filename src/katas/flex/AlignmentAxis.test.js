@@ -1,16 +1,8 @@
-
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-import Box from './box'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
+import Box from "./box";
 
 // Alignment Axis
 //
@@ -20,35 +12,36 @@ import Box from './box'
 // and alignItems will always be along the crossing direction.
 //
 
-const AlignmentAxis= (props)=>{
+const AlignmentAxis = props => {
   return (
     <View style={styles.container}>
       <Box />
-      <Box />
-      <Box />
+      <View style={styles.middle}>
+        <Box />
+        <Box />
+      </View>
       <Box />
     </View>
-  )
-}
-
+  );
+};
 
 // TODO: A focusing instruction, what's the immediate thing I need to do?
 //
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: colors[2],
   },
-  text:{
-    color: 'white',
-    textAlign:'center'
-  }
+  middle: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+  },
+  text: {
+    color: "white",
+    textAlign: "center",
+  },
 });
 
-
-
-
-
-AlignmentAxis.displayName = 'AlignmentAxis'
-export default AlignmentAxis
-
+AlignmentAxis.displayName = "AlignmentAxis";
+export default AlignmentAxis;
