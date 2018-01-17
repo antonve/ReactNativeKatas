@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
 // Filling and Centering
 //
@@ -16,31 +9,28 @@ import colors from '@/runner/colors'
 // Hint: You have to combine multiple properties
 //
 
-const FillAll = (props)=>{
+const FillAll = props => {
   return (
     <View style={styles.container}>
-      <Icon style={{color:'white'}} name='ios-bulb-outline' size={120} />
+      <Icon style={{ color: "white" }} name="ios-bulb-outline" size={120} />
     </View>
-  )
-}
-
+  );
+};
 
 // TODO: Fix the styles here
 //
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors[0],
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  text:{
-    color: 'white',
-    textAlign:'center'
-  }
+  text: {
+    color: "white",
+    textAlign: "center",
+  },
 });
 
-
-
-
-
-FillAll.displayName = 'FillAll'
-export default FillAll
-
+FillAll.displayName = "FillAll";
+export default FillAll;
