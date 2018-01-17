@@ -1,16 +1,8 @@
-
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Box from './box'
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Box from "./box";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
 // Direction
 //
@@ -20,36 +12,34 @@ import colors from '@/runner/colors'
 // * flexDirection: [column|row]
 //
 
-const Direction= (props)=>{
+const Direction = props => {
   return (
     <View style={styles.container}>
-      <Box/>
-      <Box/>
-      <Box/>
-      <View style={{}}>
-        <Box/>
-        <Box/>
-        <Box/>
+      <Box />
+      <Box />
+      <Box />
+      <View style={styles.horizontal}>
+        <Box />
+        <Box />
+        <Box />
       </View>
     </View>
-  )
-}
-
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors[3],
+    flex: 1,
   },
-  text:{
-    color: 'white',
-    textAlign:'center'
-  }
+  horizontal: {
+    flexDirection: "row",
+  },
+  text: {
+    color: "white",
+    textAlign: "center",
+  },
 });
 
-
-
-
-
-Direction.displayName = 'Direction'
-export default Direction
-
+Direction.displayName = "Direction";
+export default Direction;
