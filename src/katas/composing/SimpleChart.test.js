@@ -1,28 +1,16 @@
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
+import R from "ramda";
 
-
-import R from 'ramda'
-
-const chart = [11, 50, 2, 42, 10, 8]
+const chart = [11, 50, 2, 42, 10, 8];
 
 //TODO: remove the text element and replace it with a real bar
-const Bar = (props)=>{
-  return(
-    <View>
-      <Text>Bar!</Text>
-    </View>
-  )
-}
-
+const Bar = props => {
+  return <View style={[styles.bar, { height: props.val * 2 }]} />;
+};
 
 // Simple Chart
 //
@@ -32,39 +20,33 @@ const Bar = (props)=>{
 // - Flex weights aren't integers
 //
 //
-const SimpleChart = (props)=>{
+const SimpleChart = props => {
   return (
     <View style={styles.container}>
-      <View style={styles.chart}>
-        {chart.map(val=><Bar key={val} val={val}/>)}
-      </View>
+      <View style={styles.chart}>{chart.map(val => <Bar key={val} val={val} />)}</View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: colors[1],
   },
-  chart:{
-     height:100,
+  chart: {
+    height: 100,
+    flexDirection: "row",
+    alignItems: "flex-end",
   },
-  bar:{
-    backgroundColor:'red',
-    marginLeft:2,
-    marginRight:2,
-    width:15,
-  }
-})
+  bar: {
+    backgroundColor: "red",
+    marginLeft: 2,
+    marginRight: 2,
+    width: 15,
+  },
+});
 
-
-
-
-
-
-SimpleChart.displayName = 'SimpleChart'
-export default SimpleChart
-
+SimpleChart.displayName = "SimpleChart";
+export default SimpleChart;
