@@ -1,16 +1,8 @@
-
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Box from './box'
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Box from "./box";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
 // Gridding (Doing Grids)
 //
@@ -19,52 +11,46 @@ import colors from '@/runner/colors'
 //
 //
 
-const Gridding= (props)=>{
+const Gridding = props => {
   return (
     <View style={styles.container}>
-      <View style={{flexDirection:'row'}}>
-        <Box style={{flex:1}}/>
-        <Box style={{flex:1}}/>
+      <View style={{ flexDirection: "row" }}>
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
       </View>
-      <View style={{flexDirection:'row'}}>
-        <Box style={{}}/>
-        <Box style={{}}/>
-        <Box style={{}}/>
-        <Box style={{}}/>
+      <View style={{ flexDirection: "row" }}>
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
       </View>
-      <View style={{flex:1, justifyContent:'center'}}>
-        <Icon style={styles.text} name="ios-grid-outline" size={120}/>
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <Icon style={styles.text} name="ios-grid-outline" size={120} />
       </View>
-      <View style={{flexDirection:'row'}}>
-        <Box style={{}}/>
-        <Box style={{}}/>
-        <Box style={{}}/>
+      <View style={{ flexDirection: "row" }}>
+        <Box style={{ flex: 0.5 }} />
+        <Box style={{ flex: 0.25 }} />
+        <Box style={{ flex: 0.25 }} />
       </View>
-      <View style={{flexDirection:'row'}}>
-        <Box style={{}}/>
-        <Box style={{}}/>
-        <Box style={{}}/>
+      <View style={{ flexDirection: "row" }}>
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
+        <Box style={{ flex: 1 }} />
       </View>
     </View>
-  )
-}
-
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors[8],
-    flex:1,
+    flex: 1,
   },
-  text:{
-    color: 'white',
-    textAlign:'center'
-  }
+  text: {
+    color: "white",
+    textAlign: "center",
+  },
 });
 
-
-
-
-
-Gridding.displayName = 'Gridding'
-export default Gridding
-
+Gridding.displayName = "Gridding";
+export default Gridding;
