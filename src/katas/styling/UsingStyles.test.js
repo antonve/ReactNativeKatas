@@ -1,15 +1,7 @@
-
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
 // Using styles
 //
@@ -17,35 +9,31 @@ import colors from '@/runner/colors'
 // Font size can be changed with the fontSize property
 //
 
-const UsingStyles= (props)=>{
+const UsingStyles = props => {
   return (
     <View style={styles.container}>
-      <Text style={{}}>Using Styles</Text>
-      <Text style={{}}>Inline styles</Text>
+      <Text style={{ color: "white" }}>Using Styles</Text>
+      <Text style={{ color: "pink" }}>Inline styles</Text>
       <Text style={styles.inline}>Optimized StyleSheet styles</Text>
-      <Text style={[styles.inline]}>Array styles</Text>
+      <Text style={[styles.inline, { color: "lime" }]}>Array styles</Text>
     </View>
-  )
-}
-
+  );
+};
 
 // TODO: Add your StyleSheet styles below
 //
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors[0],
-    justifyContent:'center',
-    alignItems:'center',
-    flex:1,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
   },
-  inline:{
-  }
+  inline: {
+    color: "yellow",
+    fontSize: 24,
+  },
 });
 
-
-
-
-
-UsingStyles.displayName = 'UsingStyles'
-export default UsingStyles
-
+UsingStyles.displayName = "UsingStyles";
+export default UsingStyles;
