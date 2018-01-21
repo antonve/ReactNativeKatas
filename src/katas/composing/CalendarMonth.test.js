@@ -1,29 +1,23 @@
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
+import R from "ramda";
 
-import R from 'ramda'
+const month = R.groupBy(i => Math.ceil(i / 7), R.range(1, 36));
 
-const month = R.groupBy((i)=>Math.ceil(i/7), R.range(1,36))
-
-const Day = (props)=>{
-  if(props.number > 31){
-    return <View style={styles.blank} />
+const Day = props => {
+  if (props.number > 31) {
+    return <View style={styles.blank} />;
   }
 
-  return <View style={[styles.day, props.number == 13 && styles.selected]}>
-    <Text style={[styles.dayText, props.number == 13 && styles.selectedText]}>
-      {props.number}
-    </Text>
-  </View>
-}
+  return (
+    <View style={[styles.day, props.number == 13 && styles.selected]}>
+      <Text style={[styles.dayText, props.number == 13 && styles.selectedText]}>{props.number}</Text>
+    </View>
+  );
+};
 
 // Calendar Month
 //
@@ -39,51 +33,54 @@ const Day = (props)=>{
 // - Borders aren't always visible
 //
 //
-const CalendarMonth = (props)=>{
+const CalendarMonth = props => {
   return (
     <View style={styles.container}>
-    {
-      Object.values(month).map((arr)=>{
-        return(
+      {Object.values(month).map(arr => {
+        return (
           <View style={styles.week} key={arr.join("-")}>
-            {arr.map(day=><Day key={day} number={day}/>)}
+            {arr.map(day => <Day key={day} number={day} />)}
           </View>
-        )
-      })
-    }
+        );
+      })}
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    padding:10,
-    paddingTop:64,
-    flex:1,
-    backgroundColor: 'white',
+    padding: 10,
+    paddingTop: 64,
+    flex: 1,
+    backgroundColor: "white",
   },
-  week:{
+  week: {
+    justifyContent: "space-between",
+    flexDirection: "row",
   },
-  blank:{
-    backgroundColor:'transparent',
-    margin:1,
+  blank: {
+    backgroundColor: "transparent",
+    margin: 1,
+    flex: 1,
   },
-  day:{
-     margin:1,
+  day: {
+    margin: 1,
+    width: 10,
+    borderRadius: 2,
+    flex: 1,
   },
-  selected:{
-    borderColor:'gray',
-    borderWidth:1,
+  selected: {
+    borderColor: "gray",
+    borderWidth: 1,
   },
-  selectedText:{
-    color:'red',
+  selectedText: {
+    color: "red",
   },
-  dayText:{
-  }
-})
+  dayText: {
+    alignSelf: "center",
+    padding: 5,
+  },
+});
 
-
-
-CalendarMonth.displayName = 'CalendarMonth'
-export default CalendarMonth
-
+CalendarMonth.displayName = "CalendarMonth";
+export default CalendarMonth;
