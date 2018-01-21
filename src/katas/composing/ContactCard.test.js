@@ -21,7 +21,7 @@ const ContactCard = props => {
     <View style={[styles.container, { alignItems: "stretch" }]}>
       <View
         style={{
-          backgroundColor: "#34B99A",
+          backgroundColor: "#2ABB9B",
           padding: 20,
           margin: 10,
           shadowColor: "#175E4C",
