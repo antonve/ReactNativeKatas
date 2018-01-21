@@ -1,15 +1,7 @@
-
-import React, { Component } from 'react';
-import ReactNative, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import colors from '@/runner/colors'
-
-
+import React, { Component } from "react";
+import ReactNative, { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import colors from "@/runner/colors";
 
 // Using Text
 //
@@ -22,29 +14,27 @@ import colors from '@/runner/colors'
 // - http://iosfonts.com/
 //
 
-const UsingText= (props)=>{
+const UsingText = props => {
   return (
     <View style={styles.container}>
-      <Text>Using</Text>
-      <Text>Text</Text>
+      <Text style={{ fontFamily: "American Typewriter", fontSize: 100 }}>Using</Text>
+      <Text
+        style={{ fontFamily: "Baskerville", color: "white", fontStyle: "italic", fontSize: 100, letterSpacing: -20 }}>
+        T
+        <Text style={{ fontSize: 60, letterSpacing: 0 }}>ext</Text>
+      </Text>
     </View>
-  )
-}
-
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: colors[1],
   },
 });
 
-
-
-
-
-UsingText.displayName = 'UsingText'
-export default UsingText
-
+UsingText.displayName = "UsingText";
+export default UsingText;
